@@ -11,10 +11,15 @@ import conjunta.espe.repository.UserRepository;
 @Service
 public class UserServiceImpl implements UserService{
     @Autowired
-    UserRepository clientRepository;
+    UserRepository userRepository;
 
     @Override
     public List<User> getAllUser(){
-        return clientRepository.findAll();
+        return userRepository.findAll();
+    }
+
+    @Override
+    public User readByCode(Integer code) {
+        return this.userRepository.findBycod_user(code).get(0);
     }
 }

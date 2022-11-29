@@ -6,4 +6,6 @@ import conjunta.espe.model.User;
 
 public interface UserService {
     List<User> getAllUser();
+    
+    User readByCode(Integer code);
 }
